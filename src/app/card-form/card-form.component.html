@@ -1,0 +1,26 @@
+<form [formGroup]="cardForm">
+  <div class="container">
+    <app-input label="Name"  [control]="cardForm.get('name')"></app-input>
+
+    <app-input label="Card Number"  [control]="cardForm.get('cardNumber')"></app-input>
+
+    <div class="columns">
+      <div class="column"> 
+        <app-input label="Expiration Date"  [control]="cardForm.get('expireDate')"></app-input>
+      </div>
+      <div class="column">
+        <app-input label="CVV"  [control]="cardForm.get('securityNumber')"></app-input>
+      </div>
+    </div>
+    
+    <div class="buttons" id="buttonCss">
+      <button class="button is-warning" (click)="cleanForm()" type="button">CLEAN</button>
+
+      <button [disabled]="cardForm.invalid" class="button is-success" type="submit">SAVE</button>  
+
+    </div>
+  </div>
+</form>
+
+
+
